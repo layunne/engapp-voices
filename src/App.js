@@ -1,26 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import IconButton from '@material-ui/core/IconButton';
+
+import PlayIcon from '@material-ui/icons/PlayArrow';
+
+import play from 'audio-play';
+import load from 'audio-loader';
+
+const click = _ => {
+  load(require('./audio.ogg')).then(play)
+}
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <>
+        <CssBaseline />
+        <Grid container style={{ padding: 10 }}>
+          <Grid item>
+            <Paper elevation={4} style={{ padding: 15 }}>
+              <Typography variant="subtitle1">
+                Hassum meu irmão, e aí?
+              </Typography>
+              <IconButton onClick={click}>
+                <PlayIcon style={{ fontSize: 40 }} />
+              </IconButton>
+            </Paper>
+          </Grid>
+        </Grid>
+      </>
     );
   }
 }
