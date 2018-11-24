@@ -48,7 +48,7 @@ class AudioCard extends Component {
 		const { playing } = this.state;
 		const { title } = this.props;
 		return (
-			<Grid item xs={6} md={2}>
+			<Grid item xs={6} sm={4} lg={2}>
 				<Card >
 					<CardHeader title={title} />
 					<CardContent>
