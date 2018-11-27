@@ -65,8 +65,8 @@ class AudioCard extends Component {
 						</Grid>
 					</CardContent>
 					<CardActions>
-						<IconButton>
-							<ShareIcon className={classes.btnControls}/>
+						<IconButton className={classes.btnControls}>
+							<ShareIcon />
 						</IconButton >
 					</CardActions>
 				</Card>
