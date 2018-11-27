@@ -52,10 +52,10 @@ class AudioCard extends Component {
 		return (
 			<Grid item xs={6} sm={4} lg={2}>
 				<Card className={classes.eachCard}>
-					<CardHeader title={title} />
+					<CardHeader title={title} className={classes.titBoxes} />
 					<CardContent>
 						<Grid container justify="center">
-							<IconButton onClick={this.click}>
+							<IconButton onClick={this.click} className={classes.btnControls}>
 								{ playing ? 
 									<PauseIcon style={{ fontSize: 40 }} />
 									:
@@ -66,7 +66,7 @@ class AudioCard extends Component {
 					</CardContent>
 					<CardActions>
 						<IconButton>
-							<ShareIcon />
+							<ShareIcon className={classes.btnControls}/>
 						</IconButton >
 					</CardActions>
 				</Card>
