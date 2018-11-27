@@ -6,6 +6,8 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
+import { withStyles } from '@material-ui/core/styles';
+import audioCardStyle from './assets/jss/AudioCard';
 
 import PauseIcon from '@material-ui/icons/Pause';
 import PlayIcon from '@material-ui/icons/PlayArrow';
@@ -46,10 +48,10 @@ class AudioCard extends Component {
 
 	render() {
 		const { playing } = this.state;
-		const { title } = this.props;
+		const { title, classes } = this.props;
 		return (
 			<Grid item xs={6} sm={4} lg={2}>
-				<Card >
+				<Card className={classes.eachCard}>
 					<CardHeader title={title} />
 					<CardContent>
 						<Grid container justify="center">
@@ -73,4 +75,4 @@ class AudioCard extends Component {
 	}
 }
 
-export default AudioCard;
+export default withStyles(audioCardStyle)(AudioCard);
